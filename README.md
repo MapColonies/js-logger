@@ -1,25 +1,5 @@
-# js logger
+# ts-npm-package-boilerplate
 
-Javascript and typescript logger for MapColonies based on pino.
-
-## Usage
-
-```typescript
-import jsLogger from '@map-colonies/js-logger';
-
-const logger = jsLogger();
-
-logger.info('hello world');
-
-logger.error({hello: 'world'});
-```
-
-for more detailed usage check the [pino documentation](https://github.com/pinojs/pino).
-
-## Configuration
-| name |type| default value | description
-|---|---|---|---|
-enabled | boolean | true| enables logging
-level | string | 'info' | one of the supported level or silent to disable logging 
-prettyPrint | boolean |false| pretty print for developing purposes
-redact | array | undefined| array of paths in object to be redacted from the log
+After cloning this template, please do the following:
+1. insert secrets to repo secrets for the github actions.
+2. replace every string "ts-npm-package-boilerplate" with your package name.
