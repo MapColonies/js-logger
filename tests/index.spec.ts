@@ -1,6 +1,6 @@
 import jsLogger from '../src';
 
-describe('plus', function () {
+describe('jsLogger', function () {
   it('should initialize the logger without errors', function () {
     const logger = jsLogger();
 
