@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.0.1 (2021-04-11)
+
+
+### Features
+
+* **logger:** first implementation using pino ([#4](https://github.com/MapColonies/js-logger/issues/4)) ([8d042b9](https://github.com/MapColonies/js-logger/commit/8d042b973ee164ff16521da9d8e4f8003dc6d8e6))
+
 ## 1.1.0 (2021-01-04)
 
 
