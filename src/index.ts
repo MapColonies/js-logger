@@ -1,4 +1,4 @@
-import pino, { LoggerOptions as PinoOptions, Logger, destination } from 'pino';
+import pino, { LoggerOptions as PinoOptions, Logger } from 'pino';
 
 type LoggerOptions = Pick<PinoOptions, 'enabled' | 'level' | 'prettyPrint' | 'redact' | 'hooks'>;
 
