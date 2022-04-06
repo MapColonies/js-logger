@@ -19,12 +19,12 @@ describe('jsLogger', function () {
     expect(logLine).toHaveProperty('msg', 'avi');
   });
 
-  it('should support prettyPrint option', function () {
-    const logger = jsLogger({ prettyPrint: true }, 'avi.log');
+  it('should support base option', function () {
+    const logger = jsLogger({ base: { key: 'value' } }, 'avi-base.log');
 
     logger.info('avi');
 
-    const logLine = JSON.parse(readFileSync('avi.log').toString()) as Record<string, string>;
+    const logLine = JSON.parse(readFileSync('avi-base.log').toString()) as Record<string, string>;
 
     expect(logLine).toHaveProperty('msg', 'avi');
   });
