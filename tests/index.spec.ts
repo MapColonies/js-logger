@@ -18,4 +18,14 @@ describe('jsLogger', function () {
 
     expect(logLine).toHaveProperty('msg', 'avi');
   });
+
+  it('should support prettyPrint option', function () {
+    const logger = jsLogger({ prettyPrint: true }, 'avi.log');
+
+    logger.info('avi');
+
+    const logLine = JSON.parse(readFileSync('avi.log').toString()) as Record<string, string>;
+
+    expect(logLine).toHaveProperty('msg', 'avi');
+  });
 });
