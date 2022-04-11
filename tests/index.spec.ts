@@ -27,5 +27,6 @@ describe('jsLogger', function () {
     const logLine = JSON.parse(readFileSync('avi-base.log').toString()) as Record<string, string>;
 
     expect(logLine).toHaveProperty('msg', 'avi');
+    expect(logLine).toHaveProperty('key', 'value');
   });
 });
