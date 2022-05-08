@@ -1,6 +1,6 @@
-import pino, { LoggerOptions as PinoOptions, Logger } from 'pino';
+import pino, { LoggerOptions as PinoOptions, Logger, TransportSingleOptions } from 'pino';
 
-type LoggerOptions = Pick<PinoOptions, 'enabled' | 'level' | 'prettyPrint' | 'redact' | 'hooks'>;
+type LoggerOptions = Pick<PinoOptions, 'enabled' | 'level' | 'redact' | 'hooks' | 'base'> & { prettyPrint?: boolean };
 
 const baseOptions: PinoOptions = {
   formatters: {
@@ -11,7 +11,13 @@ const baseOptions: PinoOptions = {
 };
 
 const jsLogger = (options?: LoggerOptions, destination: string | number = 1): Logger => {
-  const pinoOptions: PinoOptions = { ...baseOptions, ...options };
+  let transport: TransportSingleOptions | undefined = undefined;
+
+  if (options?.prettyPrint === true) {
+    transport = { target: 'pino-pretty' };
+  }
+
+  const pinoOptions: PinoOptions = { ...baseOptions, ...options, transport };
   return pino(pinoOptions, pino.destination(destination));
 };
 
