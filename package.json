@@ -1,6 +1,6 @@
 {
   "name": "@map-colonies/js-logger",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Javascript and typescript logger for MapColonies based on pino",
   "main": "./dist/index.js",
   "scripts": {

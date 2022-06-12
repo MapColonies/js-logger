@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.5](https://github.com/MapColonies/js-logger/compare/v0.0.4...v0.0.5) (2022-06-12)
+
+
+### Features
+
+* added mixin to LoggerOptions ([#10](https://github.com/MapColonies/js-logger/issues/10)) ([a7a5603](https://github.com/MapColonies/js-logger/commit/a7a560368f6c396bc37648742f710595e73663e3))
+
 ### [0.0.4](https://github.com/MapColonies/js-logger/compare/v0.0.3...v0.0.4) (2022-05-18)
 
 
