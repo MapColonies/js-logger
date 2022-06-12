@@ -1,6 +1,6 @@
 import pino, { LoggerOptions as PinoOptions, Logger, TransportSingleOptions } from 'pino';
 
-type LoggerOptions = Pick<PinoOptions, 'enabled' | 'level' | 'redact' | 'hooks' | 'base'> & { prettyPrint?: boolean };
+type LoggerOptions = Pick<PinoOptions, 'enabled' | 'level' | 'redact' | 'hooks' | 'base' | 'mixin'> & { prettyPrint?: boolean };
 
 const baseOptions: PinoOptions = {
   formatters: {
