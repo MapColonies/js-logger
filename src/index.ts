@@ -15,6 +15,8 @@ const jsLogger = (options?: LoggerOptions, destination: string | number = 1): Lo
 
   if (options?.prettyPrint === true) {
     transport = { target: 'pino-pretty' };
+
+    delete options.prettyPrint;
   }
 
   const pinoOptions: PinoOptions = { ...baseOptions, ...options, transport };
