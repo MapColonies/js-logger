@@ -2,14 +2,14 @@ apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: js-logger
-  description: An opnionated logger implemented in JavaScript for MapColonies 
+  description: An opnionated logger implemented in JavaScript for MapColonies
   annotations:
     github.com/project-slug: MapColonies/js-logger
-  tags: 
+  tags:
     - nodejs
     - typescript
     - observability
-    
+
 spec:
   type: library
   lifecycle: production
