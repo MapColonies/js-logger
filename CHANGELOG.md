@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.0.0](https://github.com/MapColonies/js-logger/compare/v0.0.5...v1.0.0) (2023-04-03)
+
+
+### ⚠ BREAKING CHANGES
+
+* upgraded version (#12)
+
+### Features
+
+* added backstage docs ([791a66e](https://github.com/MapColonies/js-logger/commit/791a66e0e21f58d5b8051e4a102e68aa34daab4f))
+* upgraded version ([#12](https://github.com/MapColonies/js-logger/issues/12)) ([dcf88ce](https://github.com/MapColonies/js-logger/commit/dcf88ce2d21f7a344530c80a047ab03f70580b4e))
+
 ### [0.0.5](https://github.com/MapColonies/js-logger/compare/v0.0.4...v0.0.5) (2022-06-12)
 
 
