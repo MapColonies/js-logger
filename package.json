@@ -40,7 +40,7 @@
   "devDependencies": {
     "@commitlint/cli": "^17.0.2",
     "@commitlint/config-conventional": "^17.0.2",
-    "@map-colonies/eslint-config": "^3.1.1",
+    "@map-colonies/eslint-config": "^4.0.0",
     "@map-colonies/prettier-config": "0.0.1",
     "@elastic/elasticsearch": "8.10.0",
     "@types/deepmerge": "^2.2.0",
