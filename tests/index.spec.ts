@@ -25,7 +25,7 @@ describe('jsLogger', function () {
 
     it('should support other destinations', async function () {
       const path = 'avi.log';
-      const logger = jsLogger({}, { file: { enabled: true, path: 'avi.log' }, console: { enabled: false } });
+      const logger = jsLogger({}, { file: { enabled: true, path }, console: { enabled: false } });
 
       const waitForFileWritePromise = waitForFileWrite(path);
 
