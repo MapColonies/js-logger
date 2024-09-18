@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.1.0](https://github.com/MapColonies/js-logger/compare/v1.0.1...v1.1.0) (2024-09-18)
+
+
+### Features
+
+* add pino-caller support ([#15](https://github.com/MapColonies/js-logger/issues/15)) ([f3d26ea](https://github.com/MapColonies/js-logger/commit/f3d26ea8f2aebf72c6c6fe7f6c9e5f51f02ef6c7))
+
 ### [1.0.1](https://github.com/MapColonies/js-logger/compare/v1.0.0...v1.0.1) (2023-04-04)
 
 ## [1.0.0](https://github.com/MapColonies/js-logger/compare/v0.0.5...v1.0.0) (2023-04-03)
