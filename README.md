@@ -25,3 +25,4 @@ prettyPrint | boolean |false| pretty print for developing purposes
 redact | array | undefined| array of paths in object to be redacted from the log
 destination | number / string | 1 | The stream to send the log to, or file
 base | object | {pid: process.pid, hostname: os.hostname} | Key-value object added as child logger to each log line
+pinoCaller | boolean | false | adds the call site of each log message to the log output 

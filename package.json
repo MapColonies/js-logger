@@ -61,6 +61,7 @@
   },
   "dependencies": {
     "pino": "^8.11.0",
+    "pino-caller": "^3.4.0",
     "pino-pretty": "^10.0.0"
   }
 }
