@@ -22,8 +22,12 @@ const jsLogger = (options?: LoggerOptions, destination: string | number = 1): Lo
 
   const pinoOptions: PinoOptions = { ...baseOptions, ...options, transport };
   const logger = pino(pinoOptions, pino.destination(destination));
-  const loggerWithCaller = pinoCaller(logger);
-  return options?.pinoCaller === true ? loggerWithCaller : logger;
+
+  if (options?.pinoCaller === true) {
+    return pinoCaller(logger);
+  }
+
+  return logger;
 };
 
 export { Logger } from 'pino';
