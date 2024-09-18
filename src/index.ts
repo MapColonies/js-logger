@@ -1,6 +1,7 @@
 import pino, { LoggerOptions as PinoOptions, Logger, TransportSingleOptions } from 'pino';
+import pinoCaller from 'pino-caller';
 
-type LoggerOptions = Pick<PinoOptions, 'enabled' | 'level' | 'redact' | 'hooks' | 'base' | 'mixin'> & { prettyPrint?: boolean };
+type LoggerOptions = Pick<PinoOptions, 'enabled' | 'level' | 'redact' | 'hooks' | 'base' | 'mixin'> & { prettyPrint?: boolean; pinoCaller?: boolean };
 
 const baseOptions: PinoOptions = {
   formatters: {
@@ -20,7 +21,9 @@ const jsLogger = (options?: LoggerOptions, destination: string | number = 1): Lo
   }
 
   const pinoOptions: PinoOptions = { ...baseOptions, ...options, transport };
-  return pino(pinoOptions, pino.destination(destination));
+  const logger = pino(pinoOptions, pino.destination(destination));
+  const loggerWithCaller = pinoCaller(logger);
+  return options?.pinoCaller === true ? loggerWithCaller : logger;
 };
 
 export { Logger } from 'pino';
