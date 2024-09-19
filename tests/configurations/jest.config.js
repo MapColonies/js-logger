@@ -8,7 +8,6 @@ module.exports = {
   coverageDirectory: '<rootDir>/coverage',
   coverageReporters: ['text', 'html', 'json'],
   rootDir: '../../.',
-  setupFiles: ['<rootDir>/tests/configurations/jest.setup.js'],
   globalTeardown: '<rootDir>/tests/configurations/jest.teardown.js',
   preset: 'ts-jest',
   testEnvironment: 'node',
