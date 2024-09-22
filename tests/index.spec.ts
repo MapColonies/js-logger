@@ -35,4 +35,18 @@ describe('jsLogger', function () {
     expect(logLine).toHaveProperty('msg', 'avi');
     expect(logLine).toHaveProperty('key', 'value');
   });
+
+  it('should include caller information if enabled', async function () {
+    const logger = jsLogger({ pinoCaller: true }, 'avi-caller.log');
+
+    logger.info('avi');
+
+    // Wait for the log to be written
+    await setTimeout(0);
+
+    const logLine = JSON.parse(readFileSync('avi-caller.log', { encoding: 'utf-8' })) as Record<string, string>;
+
+    expect(logLine).toHaveProperty('msg', 'avi');
+    expect(logLine).toHaveProperty('caller');
+  });
 });

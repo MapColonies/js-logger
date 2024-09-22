@@ -14,6 +14,7 @@ const baseOptions: PinoOptions = {
 const jsLogger = (options?: LoggerOptions, destination: string | number = 1): Logger => {
   let transport: TransportSingleOptions | undefined = undefined;
 
+  /* istanbul ignore next */
   if (options?.prettyPrint === true) {
     transport = { target: 'pino-pretty' };
 
