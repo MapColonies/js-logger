@@ -1,6 +1,6 @@
 module.exports = {
   transform: {
-    '^.+\\.ts$': 'ts-jest',
+    '^.+\\.ts$': '@swc/jest',
   },
   testMatch: ['<rootDir>/tests/**/*.spec.ts'],
   collectCoverage: true,
@@ -9,7 +9,6 @@ module.exports = {
   coverageReporters: ['text', 'html', 'json'],
   rootDir: '../../.',
   globalTeardown: '<rootDir>/tests/configurations/jest.teardown.js',
-  preset: 'ts-jest',
   testEnvironment: 'node',
   reporters: ['default', ['jest-html-reporters', { pageTitle: 'tess', publicPath: './reports', filename: 'test.html' }]],
   coverageThreshold: {
