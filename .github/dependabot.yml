@@ -11,6 +11,8 @@ updates:
     allow:
       - dependency-type: production
     directory: /
+    labels:
+      - 'infra'
     commit-message:
       prefix: 'deps'
     groups:
@@ -33,6 +35,8 @@ updates:
     directory: /
     commit-message:
       prefix: 'deps'
+    labels:
+      - 'infra'
     reviewers:
       - '@MapColonies/infra'
     groups:
@@ -54,6 +58,8 @@ updates:
   - package-ecosystem: github-actions
     schedule:
       interval: weekly
+    labels:
+      - 'infra'
     commit-message:
       prefix: 'ci'
     directory: '/'
