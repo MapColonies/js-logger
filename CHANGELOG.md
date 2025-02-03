@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.0.0](https://github.com/MapColonies/js-logger/compare/v1.1.0...v2.0.0) (2025-02-03)
+
+
+### ⚠ BREAKING CHANGES
+
+* added engine setting to package.json ([#17](https://github.com/MapColonies/js-logger/issues/17))
+
+### Dependency Updates
+
+* bump pino-pretty from 11.2.2 to 13.0.0 ([#23](https://github.com/MapColonies/js-logger/issues/23)) ([ed9e7f0](https://github.com/MapColonies/js-logger/commit/ed9e7f0b1c1c7410d93f337ecf40d9ba9c459737))
+
+
+### Code Refactoring
+
+* modernize ([#16](https://github.com/MapColonies/js-logger/issues/16)) ([1a20b51](https://github.com/MapColonies/js-logger/commit/1a20b518a673671cf0996c3cdc2b3723ebe52df1))
+
+
+### Build System
+
+* added engine setting to package.json ([#17](https://github.com/MapColonies/js-logger/issues/17)) ([43e8ddf](https://github.com/MapColonies/js-logger/commit/43e8ddfaffbc5edb4e57d1aba165c83623d489b0))
+
 ## [1.1.0](https://github.com/MapColonies/js-logger/compare/v1.0.1...v1.1.0) (2024-09-18)
 
 
