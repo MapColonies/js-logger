@@ -16,7 +16,7 @@ describe('jsLogger', function () {
     logger.info('avi');
 
     // Wait for the log to be written
-    await setTimeout(0.1);
+    await setTimeout(500);
 
     const logLine = JSON.parse(readFileSync('avi.log', { encoding: 'utf-8' })) as Record<string, string>;
     expect(logLine).toHaveProperty('msg', 'avi');
@@ -28,7 +28,7 @@ describe('jsLogger', function () {
     logger.info('avi');
 
     // Wait for the log to be written
-    await setTimeout(0.1);
+    await setTimeout(500);
 
     const logLine = JSON.parse(readFileSync('avi-base.log', { encoding: 'utf-8' })) as Record<string, string>;
 
@@ -42,7 +42,7 @@ describe('jsLogger', function () {
     logger.info('avi');
 
     // Wait for the log to be written
-    await setTimeout(0.1);
+    await setTimeout(500);
 
     const logLine = JSON.parse(readFileSync('avi-caller.log', { encoding: 'utf-8' })) as Record<string, string>;
 
