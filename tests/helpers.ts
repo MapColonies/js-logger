@@ -7,7 +7,8 @@ export async function waitForFileCreation(path: string): Promise<void> {
   let iterations = 0;
   const maxIterations = 10;
 
-  for await (const _ of setInterval(interval, { signal: abortController.signal })) {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  for await (const unusedValue of setInterval(interval, { signal: abortController.signal })) {
     iterations++;
     const fileExists = existsSync(path);
     if (fileExists && statSync(path).size > 0) {
