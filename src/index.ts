@@ -1,5 +1,5 @@
-import pino, { LoggerOptions as PinoOptions, Logger, TransportSingleOptions } from 'pino';
-import pinoCaller from 'pino-caller';
+import { pino, LoggerOptions as PinoOptions, Logger, TransportSingleOptions, destination as pinoDestination } from 'pino';
+import { pinoCaller } from 'pino-caller';
 
 /**
  * Options for configuring the logger.
@@ -65,7 +65,7 @@ function jsLogger(options?: LoggerOptions, destination: string | number = 1): Lo
   }
 
   const pinoOptions: PinoOptions = { ...baseOptions, ...options, transport };
-  const logger = pino(pinoOptions, pino.destination(destination));
+  const logger = pino(pinoOptions, pinoDestination(destination));
 
   if (options?.pinoCaller === true) {
     return pinoCaller(logger);
