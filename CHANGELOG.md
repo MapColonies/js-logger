@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.0.0](https://github.com/MapColonies/js-logger/compare/v2.0.0...v3.0.0) (2025-07-29)
+
+
+### ⚠ BREAKING CHANGES
+
+* update engine and packages ([#54](https://github.com/MapColonies/js-logger/issues/54))
+
+### Build System
+
+* **devdeps:** bump the dev-patch group across 1 directory with 13 updates ([#52](https://github.com/MapColonies/js-logger/issues/52)) ([1049722](https://github.com/MapColonies/js-logger/commit/104972216e2420cfbb5db1ce6cf7873232794a03))
+* update engine and packages ([#54](https://github.com/MapColonies/js-logger/issues/54)) ([0abbe98](https://github.com/MapColonies/js-logger/commit/0abbe9859672562490a7f9004b4cc823931fe943))
+
 ## [2.0.0](https://github.com/MapColonies/js-logger/compare/v1.1.0...v2.0.0) (2025-02-03)
 
 
