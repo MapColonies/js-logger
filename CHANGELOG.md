@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.0.1](https://github.com/MapColonies/js-logger/compare/v3.0.0...v3.0.1) (2025-08-03)
+
+
+### Bug Fixes
+
+* ci had bad node version ([e10ec6f](https://github.com/MapColonies/js-logger/commit/e10ec6f17d27ec317626c806af9c9469e95d171e))
+
 ## [3.0.0](https://github.com/MapColonies/js-logger/compare/v2.0.0...v3.0.0) (2025-07-29)
 
 
