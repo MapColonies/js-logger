@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.0.2](https://github.com/MapColonies/js-logger/compare/v3.0.1...v3.0.2) (2025-08-03)
+
+
+### Bug Fixes
+
+* ignore tests folder entirely when building package ([#57](https://github.com/MapColonies/js-logger/issues/57)) ([db3b48f](https://github.com/MapColonies/js-logger/commit/db3b48f39d41780a339f8ee72b56242d80c35d2d))
+
 ## [3.0.1](https://github.com/MapColonies/js-logger/compare/v3.0.0...v3.0.1) (2025-08-03)
 
 
