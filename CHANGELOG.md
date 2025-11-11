@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.0.3](https://github.com/MapColonies/js-logger/compare/v3.0.2...v3.0.3) (2025-11-11)
+
+
+### Dependency Updates
+
+* bump pino-pretty from 13.0.0 to 13.1.2 ([#67](https://github.com/MapColonies/js-logger/issues/67)) ([22294e0](https://github.com/MapColonies/js-logger/commit/22294e0ab0435ce541abfd4ef6120b35f1ba68c1))
+
 ## [3.0.2](https://github.com/MapColonies/js-logger/compare/v3.0.1...v3.0.2) (2025-08-03)
 
 
