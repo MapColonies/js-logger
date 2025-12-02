@@ -1,5 +1,6 @@
-import { pino, LoggerOptions as PinoOptions, Logger, TransportSingleOptions, destination as pinoDestination } from 'pino';
+import { pino, LoggerOptions as PinoOptions, Logger, TransportSingleOptions, transport as pinoTransport, DestinationStream } from 'pino';
 import { pinoCaller } from 'pino-caller';
+import type { Options } from 'pino-opentelemetry-transport';
 
 /**
  * Options for configuring the logger.
@@ -37,6 +38,10 @@ interface LoggerOptions {
    * Includes the caller's file and line number in log output.
    */
   pinoCaller?: boolean;
+  /**
+   * Enables OpenTelemetry integration for log output.
+   */
+  enableOpentelemetry?: boolean;
 }
 
 const baseOptions: PinoOptions = {
@@ -55,7 +60,7 @@ const baseOptions: PinoOptions = {
  * @returns The configured logger instance.
  */
 function jsLogger(options?: LoggerOptions, destination: string | number = 1): Logger {
-  let transport: TransportSingleOptions | undefined = undefined;
+  let transport: TransportSingleOptions = { target: 'pino/file', options: { destination } };
 
   /* istanbul ignore next */
   if (options?.prettyPrint === true) {
@@ -64,8 +69,25 @@ function jsLogger(options?: LoggerOptions, destination: string | number = 1): Lo
     delete options.prettyPrint;
   }
 
-  const pinoOptions: PinoOptions = { ...baseOptions, ...options, transport };
-  const logger = pino(pinoOptions, pinoDestination(destination));
+  if (options?.enableOpentelemetry === true) {
+    const otelOptions: Options = {
+      loggerName: 'js-logger',
+      serviceVersion: '1.0.0',
+      logRecordProcessorOptions: [
+        {
+          recordProcessorType: 'simple',
+          exporterOptions: {
+            protocol: 'console',
+          },
+        },
+        { recordProcessorType: 'batch', exporterOptions: { protocol: 'grpc', grpcExporterOptions: { url: 'http://localhost:4317' } } },
+      ],
+    };
+    transport = { target: 'pino-opentelemetry-transport', options: otelOptions };
+    delete options.enableOpentelemetry;
+  }
+  const pinoOptions: PinoOptions = { ...baseOptions, ...options };
+  const logger = pino(pinoOptions, pinoTransport(transport) as DestinationStream);
 
   if (options?.pinoCaller === true) {
     return pinoCaller(logger);
