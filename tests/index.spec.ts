@@ -49,4 +49,11 @@ describe('jsLogger', function () {
     expect(logLine).toHaveProperty('msg', 'avi');
     expect(logLine).toHaveProperty('caller');
   });
+
+  it('should still output logs when opentelemetry is enabled', function () {
+    const logger = jsLogger({ opentelemetryOptions: { enabled: true } });
+
+    expect(logger).toBeDefined();
+    expect(() => logger.info('test otel')).not.toThrow();
+  });
 });
