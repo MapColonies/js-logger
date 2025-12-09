@@ -55,7 +55,7 @@
     "@swc/jest": "^0.2.39",
     "@types/jest": "^30.0.0",
     "@types/node": "^24.1.0",
-    "commitlint": "^19.8.1",
+    "commitlint": "^20.2.0",
     "eslint": "^9.32.0",
     "eslint-plugin-jest": "^28.11.0",
     "glob": "^11.0.3",
