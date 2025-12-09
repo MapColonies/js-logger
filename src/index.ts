@@ -1,5 +1,7 @@
-import { pino, LoggerOptions as PinoOptions, Logger, TransportSingleOptions, destination as pinoDestination } from 'pino';
+import { pino, LoggerOptions as PinoOptions, Logger, TransportSingleOptions, transport as pinoTransport, DestinationStream } from 'pino';
 import { pinoCaller } from 'pino-caller';
+import type { Options } from 'pino-opentelemetry-transport';
+import { readPackageJsonSync } from '@map-colonies/read-pkg';
 
 /**
  * Options for configuring the logger.
@@ -37,6 +39,24 @@ interface LoggerOptions {
    * Includes the caller's file and line number in log output.
    */
   pinoCaller?: boolean;
+
+  /**
+   * Options for OpenTelemetry integration.
+   */
+  opentelemetryOptions?: {
+    /**
+     * Enables OpenTelemetry logging.
+     */
+    enabled?: boolean;
+    /**
+     * The URL for the OpenTelemetry collector.
+     */
+    url?: string;
+    /**
+     * Additional resource attributes for OpenTelemetry.
+     * */
+    resourceAttributes?: Record<string, string>;
+  };
 }
 
 const baseOptions: PinoOptions = {
@@ -55,7 +75,7 @@ const baseOptions: PinoOptions = {
  * @returns The configured logger instance.
  */
 function jsLogger(options?: LoggerOptions, destination: string | number = 1): Logger {
-  let transport: TransportSingleOptions | undefined = undefined;
+  let transport: TransportSingleOptions = { target: 'pino/file', options: { destination } };
 
   /* istanbul ignore next */
   if (options?.prettyPrint === true) {
@@ -64,8 +84,29 @@ function jsLogger(options?: LoggerOptions, destination: string | number = 1): Lo
     delete options.prettyPrint;
   }
 
-  const pinoOptions: PinoOptions = { ...baseOptions, ...options, transport };
-  const logger = pino(pinoOptions, pinoDestination(destination));
+  if (options?.opentelemetryOptions?.enabled === true) {
+    const pkg = readPackageJsonSync();
+    const otelOptions: Options = {
+      loggerName: 'js-logger',
+      serviceVersion: pkg.version ?? '1.0.0',
+      resourceAttributes: options.opentelemetryOptions.resourceAttributes,
+      logRecordProcessorOptions: [
+        {
+          recordProcessorType: 'simple',
+          exporterOptions: {
+            protocol: 'console',
+          },
+        },
+        {
+          recordProcessorType: 'batch',
+          exporterOptions: { protocol: 'grpc', grpcExporterOptions: { url: options.opentelemetryOptions.url ?? 'http://localhost:4317' } },
+        },
+      ],
+    };
+    transport = { target: 'pino-opentelemetry-transport', options: otelOptions };
+  }
+  const pinoOptions: PinoOptions = { ...baseOptions, ...options };
+  const logger = pino(pinoOptions, pinoTransport(transport) as DestinationStream);
 
   if (options?.pinoCaller === true) {
     return pinoCaller(logger);

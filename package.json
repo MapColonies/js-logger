@@ -70,8 +70,15 @@
     "typescript": "^5.8.3"
   },
   "dependencies": {
-    "pino": "^9.7.0",
+    "@map-colonies/read-pkg": "^1.0.0",
+    "pino": "^10.1.0",
     "pino-caller": "^4.0.0",
-    "pino-pretty": "^13.0.0"
+    "pino-opentelemetry-transport": "^1.1.0",
+    "pino-pretty": "^13.1.2"
+  },
+  "overrides": {
+    "pino-opentelemetry-transport": {
+      "pino": "^10.0.0"
+    }
   }
 }

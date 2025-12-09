@@ -41,3 +41,7 @@ For more detailed usage check the [pino documentation](https://github.com/pinojs
 | mixin | function | undefined | function to add custom properties to log output |
 | prettyPrint | boolean | false | enables pretty-printing of log output |
 | pinoCaller | boolean | false | includes the caller's file and line number in log output |
+
+
+### OpenTelemetry log support
+js-logger can emit logs in OpenTelemetry format for integration with OpenTelemetry-compatible observability tools.
