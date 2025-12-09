@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.1.0](https://github.com/MapColonies/js-logger/compare/v3.0.2...v3.1.0) (2025-12-09)
+
+
+### Features
+
+* added option to output logs to otlp collector MAPCO-7917 ([#81](https://github.com/MapColonies/js-logger/issues/81)) ([e26c506](https://github.com/MapColonies/js-logger/commit/e26c506def7334ddec70a788d40601668d2363d3))
+
+
+### Dependency Updates
+
+* bump pino-pretty from 13.0.0 to 13.1.2 ([#67](https://github.com/MapColonies/js-logger/issues/67)) ([22294e0](https://github.com/MapColonies/js-logger/commit/22294e0ab0435ce541abfd4ef6120b35f1ba68c1))
+
 ## [3.0.2](https://github.com/MapColonies/js-logger/compare/v3.0.1...v3.0.2) (2025-08-03)
 
 
