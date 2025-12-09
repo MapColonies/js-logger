@@ -45,7 +45,7 @@
   },
   "homepage": "https://github.com/MapColonies/js-logger#readme",
   "devDependencies": {
-    "@commitlint/cli": "^19.8.1",
+    "@commitlint/cli": "^20.2.0",
     "@map-colonies/commitlint-config": "^1.1.1",
     "@map-colonies/eslint-config": "^6.0.0",
     "@map-colonies/infra-copilot-instructions": "^1.2.0",
